@@ -29,7 +29,7 @@ Command Line Interface (CLI) provides the interface to the Serial Over
 Lan service as an interface for platform control.
 
 %description cli -l pl
-CLI dostarcza interfejs do us³ig Serial over LAN jako interfejs do
+CLI dostarcza interfejs do us³ugi Serial over LAN jako interfejs do
 sterowania platform±.
 
 %prep

@@ -3,8 +3,7 @@ Summary(pl):	Intel Server Management - oprogramowanie do zarz±dzania serwerem
 Name:		ism
 Version:	5.5.7
 Release:	1
-# ??? GPL and NoSource ???
-License:	GPL
+License:	restricted, non-distributable
 Group:		Applications/System
 Source0:	ftp://aiedownload.intel.com/df-support/6940/eng/ism%(echo %{version} | tr -d .)_build2.exe
 # NoSource0-md5:	cbd5b6877fbeb0af718823c60fb155f6

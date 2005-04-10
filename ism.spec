@@ -2,12 +2,13 @@ Summary:	Intel Server Management
 Summary(pl):	Intel Server Management - oprogramowanie do zarz±dzania serwerem
 Name:		ism
 Version:	5.5.7
-Release:	1
+Release:	2
 License:	restricted, non-distributable
 Group:		Applications/System
-Source0:	ftp://aiedownload.intel.com/df-support/6940/eng/ism%(echo %{version} | tr -d .)_build2.exe
+Source0:	ftp://aiedownload.intel.com/df-support/6940/eng/%{name}%(echo %{version} | tr -d .)_build2.exe
 # NoSource0-md5:	cbd5b6877fbeb0af718823c60fb155f6
 Source1:	%{name}-cli.init
+Source2:	dpcproxy.sysconfig
 BuildRequires:	rpm-utils
 BuildRequires:	unzip
 ExclusiveArch:	%{ix86}
@@ -41,11 +42,12 @@ rpm2cpio Software/linux/cli/8.0/*.rpm | cpio -i -d
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/rc.d/init.d
+install -d $RPM_BUILD_ROOT/etc/{sysconfig,rc.d/init.d}
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/dpcproxy
 install usr/local/cli/* $RPM_BUILD_ROOT%{_sbindir}
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/dpcproxy
 
 %post cli
 /sbin/chkconfig --add dpcproxy
@@ -72,5 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 %files cli
 %defattr(644,root,root,755)
 %doc License.txt
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/dpcproxy
 %attr(754,root,root) /etc/rc.d/init.d/dpcproxy
 %attr(755,root,root) %{_sbindir}/dpc*

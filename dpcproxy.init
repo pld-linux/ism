@@ -18,9 +18,6 @@
 # Source oident configureation.
 if [ -f /etc/sysconfig/dpcproxy ]; then
 	. /etc/sysconfig/dpcproxy
-else
-	OIDENT_USER=nobody
-	OIDENT_GROUP=proc
 fi
 
 # Check that networking is up.
@@ -40,7 +37,7 @@ case "$1" in
 	# Start daemons.
 	if [ ! -f /var/lock/subsys/dpcproxy ]; then
 		msg_starting dpcproxy
-		daemon dpcproxy
+		daemon dpcproxy $DPCPROXY_OPTS
 		RETVAL=$?
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/dpcproxy
 	else
@@ -66,10 +63,6 @@ case "$1" in
 	status dpcproxy
 	exit $?
 	;;
-#  reload)
-#	msg_reloading dpcproxy
-#	killproc dpcproxy -HUP
-#	;;
   *)
 	msg_usage "$0 {start|stop|restart|force-reload|status}"
 	exit 3

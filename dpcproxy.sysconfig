@@ -3,4 +3,5 @@
 # Define nice level for dpcproxy
 #SERVICE_RUN_NICE_LEVEL="+0"
 
-DPCPROXY_OPTS=""
+# Forces proxy to accept connections only from local host
+DPCPROXY_OPTS="-L"

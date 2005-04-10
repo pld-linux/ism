@@ -7,6 +7,7 @@ License:	restricted, non-distributable
 Group:		Applications/System
 Source0:	ftp://aiedownload.intel.com/df-support/6940/eng/%{name}%(echo %{version} | tr -d .)_build2.exe
 # NoSource0-md5:	cbd5b6877fbeb0af718823c60fb155f6
+NoSource:	0
 Source1:	%{name}-cli.init
 Source2:	dpcproxy.sysconfig
 BuildRequires:	rpm-utils

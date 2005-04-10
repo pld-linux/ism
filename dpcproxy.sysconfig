@@ -1,0 +1,6 @@
+# Customized settings for dpcproxy
+
+# Define nice level for dpcproxy
+#SERVICE_RUN_NICE_LEVEL="+0"
+
+DPCPROXY_OPTS=""

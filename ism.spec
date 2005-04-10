@@ -52,17 +52,17 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/dpcproxy
 %post cli
 /sbin/chkconfig --add dpcproxy
 if [ -f /var/lock/subsys/dpcproxy ]; then
-        /etc/rc.d/init.d/dpcproxy restart 1>&2
+	/etc/rc.d/init.d/dpcproxy restart 1>&2
 else
-        echo "Type \"/etc/rc.d/init.d/dpcproxy start\" to start dpcproxy server" 1>&2
+	echo "Type \"/etc/rc.d/init.d/dpcproxy start\" to start dpcproxy server" 1>&2
 fi
 
 %preun cli
 if [ "$1" = "0" ]; then
-        if [ -f /var/lock/subsys/dpcproxy ]; then
-                /etc/rc.d/init.d/dpcproxy stop >&2
-        fi
-        /sbin/chkconfig --del dpcproxy
+	if [ -f /var/lock/subsys/dpcproxy ]; then
+		/etc/rc.d/init.d/dpcproxy stop >&2
+	fi
+	/sbin/chkconfig --del dpcproxy
 fi
 
 %clean

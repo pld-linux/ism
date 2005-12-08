@@ -3,10 +3,10 @@
 # dpcproxy		This shell script takes care of starting and stopping dpcproxy.
 #
 # chkconfig:	2345 80 30
-# description:	dpcproxy is a Intel Server Management cli service 
-#		
+# description:	dpcproxy is a Intel Server Management cli service
+#
 # processname:	dpcproxy
-# config:	
+# config:
 # pidfile:
 
 # Source function library.

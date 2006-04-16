@@ -7,45 +7,45 @@ Release:	0.1
 License:	restricted, non-distributable
 Group:		Applications/System
 # downloading from http://downloadfinder.intel.com/scripts-df/Product_Filter.asp?ProductID=1071
-Source0:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)aa
+Source0:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)aa
 # NoSource0-md5:	52ea53ae2cf93247ca07c0cf257367b6
 NoSource:	0
-Source1:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ab
+Source1:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ab
 # NoSource1-md5:	9bca501dba89dd7720913124c3ade71a
 NoSource:	1
-Source2:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ac
+Source2:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ac
 # NoSource2-md5:	f1e8e2b09568f87e65d2371a5899c688
 NoSource:	2
-Source3:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ad
+Source3:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ad
 # NoSource3-md5:	76950c98eb18b0c1aaf00335088eaa12
 NoSource:	3
-Source4:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ae
+Source4:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ae
 # NoSource4-md5:	26e3e232228b19c0c73ad62ba76bcd9b
 NoSource:	4
-Source5:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)af
+Source5:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)af
 # NoSource5-md5:	654e183a32c59a4a47f9c457cfc5643d
 NoSource:	5
-Source6:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ag
+Source6:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ag
 # NoSource6-md5:	783e1dd01f73b23109e87e9970434b58
 NoSource:	6
-Source7:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ah
+Source7:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ah
 # NoSource7-md5:	55510bc5c5b3166dc14915e91ecd5ad8
 NoSource:	7
-Source8:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ai
+Source8:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ai
 # NoSource8-md5:	d18d195baec683b3aa565191907d6a20
 NoSource:	8
-Source9:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)aj
+Source9:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)aj
 # NoSource9-md5:	4233b377ea46a37f06d3fa7222cd2188
 NoSource:	9
-Source10:	http://aiedownload.intel.com/df-support/8590/eng/ism%(echo %{version} | tr -d .)ak
+Source10:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%(echo %{version} | tr -d .)ak
 # NoSource10-md5:	2d426246767550ee4eeae06fac1bd9f5
 NoSource:	10
 Source101:	%{name}-cli.init
 Source102:	dpcproxy.sysconfig
+BuildRequires:	cdrtools-utils
+BuildRequires:	mawk
 BuildRequires:	rpm-utils
 BuildRequires:	unzip
-BuildRequires:	mawk
-BuildRequires:	cdrtools-utils
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,6 +59,8 @@ Intel Server Management - oprogramowanie do zarz±dzania serwerem.
 Summary:	Serial Over Lan service
 Summary(pl):	Us³uga Serial over LAN
 Group:		Applications/System
+Requires(post,preun):	/sbin/chkconfig
+Requires:	rc-scripts
 
 %description cli
 Command Line Interface (CLI) provides the interface to the Serial Over

@@ -9,25 +9,25 @@ License:	restricted, non-distributable
 Group:		Applications/System
 # downloading from http://downloadfinder.intel.com/scripts-df/Product_Filter.asp?ProductID=1071
 Source0:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}aa
-# NoSource0-md5:	52ea53ae2cf93247ca07c0cf257367b6
+# NoSource0-md5:	79c19ec710a578a111b519508f7eb453
 NoSource:	0
 Source1:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}ab
-# NoSource1-md5:	9bca501dba89dd7720913124c3ade71a
+# NoSource1-md5:	7acac599f01864d733cc15ad2a39c7ee
 NoSource:	1
 Source2:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}ac
-# NoSource2-md5:	f1e8e2b09568f87e65d2371a5899c688
+# NoSource2-md5:	17189944f06516a20d95fe3ffded2043
 NoSource:	2
 Source3:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}ad
-# NoSource3-md5:	76950c98eb18b0c1aaf00335088eaa12
+# NoSource3-md5:	624a30eea7e8012d4cfb45c1fd2f769a
 NoSource:	3
 Source4:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}ae
-# NoSource4-md5:	26e3e232228b19c0c73ad62ba76bcd9b
+# NoSource4-md5:	6cea4b86dbca6aa82aaeaa57d1e93b6e
 NoSource:	4
 Source5:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}af
-# NoSource5-md5:	654e183a32c59a4a47f9c457cfc5643d
+# NoSource5-md5:	dabc4acb0964415cdb586e585cadc37e
 NoSource:	5
 Source6:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}ag
-# NoSource6-md5:	783e1dd01f73b23109e87e9970434b58
+# NoSource6-md5:	7b50ab061bc49dfdba3c3055b8ece87b
 NoSource:	6
 Source7:	http://aiedownload.intel.com/df-support/8590/eng/%{name}%{_ver}ah
 # NoSource7-md5:	55510bc5c5b3166dc14915e91ecd5ad8

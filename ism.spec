@@ -1,5 +1,5 @@
 Summary:	Intel Server Management
-Summary(pl):	Intel Server Management - oprogramowanie do zarz±dzania serwerem
+Summary(pl.UTF-8):   Intel Server Management - oprogramowanie do zarzÄ…dzania serwerem
 Name:		ism
 Version:	8.40.20.141
 Release:	1
@@ -22,12 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Intel Server Management Software.
 
-%description -l pl
-Intel Server Management - oprogramowanie do zarz±dzania serwerem.
+%description -l pl.UTF-8
+Intel Server Management - oprogramowanie do zarzÄ…dzania serwerem.
 
 %package cli
 Summary:	Serial Over Lan service
-Summary(pl):	Us³uga Serial over LAN
+Summary(pl.UTF-8):   UsÅ‚uga Serial over LAN
 Group:		Applications/System
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
@@ -36,9 +36,9 @@ Requires:	rc-scripts
 Command Line Interface (CLI) provides the interface to the Serial Over
 Lan service as an interface for platform control.
 
-%description cli -l pl
-CLI dostarcza interfejs do us³ugi Serial over LAN jako interfejs do
-sterowania platform±.
+%description cli -l pl.UTF-8
+CLI dostarcza interfejs do usÅ‚ugi Serial over LAN jako interfejs do
+sterowania platformÄ….
 
 %prep
 %setup -qc

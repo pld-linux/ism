@@ -1,5 +1,5 @@
 Summary:	Intel Server Management
-Summary(pl.UTF-8):   Intel Server Management - oprogramowanie do zarządzania serwerem
+Summary(pl.UTF-8):	Intel Server Management - oprogramowanie do zarządzania serwerem
 Name:		ism
 Version:	8.40.20.141
 Release:	1
@@ -27,7 +27,7 @@ Intel Server Management - oprogramowanie do zarządzania serwerem.
 
 %package cli
 Summary:	Serial Over Lan service
-Summary(pl.UTF-8):   Usługa Serial over LAN
+Summary(pl.UTF-8):	Usługa Serial over LAN
 Group:		Applications/System
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts

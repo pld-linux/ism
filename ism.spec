@@ -9,7 +9,7 @@ URL:		http://downloadfinder.intel.com/scripts-df-external/Product_Filter.aspx?Pr
 Source0:	http://downloadmirror.intel.com/df-support/9546/eng/%{name}840.zip
 # NoSource0-md5:	88674ce9932169580d1150dda7b458e8
 NoSource:	0
-Source101:	%{name}-cli.init
+Source101:	dpcproxy.init
 Source102:	dpcproxy.sysconfig
 BuildRequires:	cdrtools-utils
 BuildRequires:	mawk

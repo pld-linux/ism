@@ -6,8 +6,6 @@
 # description:	dpcproxy is a Intel Server Management cli service
 #
 # processname:	dpcproxy
-# config:
-# pidfile:
 
 # Source function library.
 . /etc/rc.d/init.d/functions

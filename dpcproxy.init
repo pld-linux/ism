@@ -30,37 +30,40 @@ fi
 
 start() {
 	# Start daemons.
-	if [ ! -f /var/lock/subsys/dpcproxy ]; then
-		msg_starting dpcproxy
-		daemon /usr/sbin/dpcproxy $DPCPROXY_OPTS
-		RETVAL=$?
-		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/dpcproxy
-	else
+	if [ -f /var/lock/subsys/dpcproxy ]; then
 		msg_already_running dpcproxy
+		return
 	fi
+
+	msg_starting dpcproxy
+	daemon /usr/sbin/dpcproxy $DPCPROXY_OPTS
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/dpcproxy
 }
 
 stop() {
 	# Stop daemons.
-	if [ -f /var/lock/subsys/dpcproxy ]; then
-		msg_stopping dpcproxy
-		killproc dpcproxy
-		rm -f /var/lock/subsys/dpcproxy >/dev/null 2>&1
-	else
+	if [ ! -f /var/lock/subsys/dpcproxy ]; then
 		msg_not_running dpcproxy
+		return
 	fi
+
+	msg_stopping dpcproxy
+	killproc dpcproxy
+	rm -f /var/lock/subsys/dpcproxy >/dev/null 2>&1
 }
 
 condrestart() {
-	if [ -f /var/lock/subsys/dpcproxy ]; then
-		stop
-		start
-	else
+	if [!  -f /var/lock/subsys/dpcproxy ]; then
 		if [ $1 -ne 0 ]; then
 			msg_not_running dpcproxy
 		fi
 		RETVAL=$1
+		return
 	fi
+
+	stop
+	start
 }
 
 RETVAL=0

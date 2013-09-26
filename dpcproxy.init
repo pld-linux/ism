@@ -32,7 +32,7 @@ start() {
 	# Start daemons.
 	if [ ! -f /var/lock/subsys/dpcproxy ]; then
 		msg_starting dpcproxy
-		daemon dpcproxy $DPCPROXY_OPTS
+		daemon /usr/sbin/dpcproxy $DPCPROXY_OPTS
 		RETVAL=$?
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/dpcproxy
 	else
